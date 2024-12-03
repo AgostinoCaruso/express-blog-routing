@@ -9,7 +9,7 @@ Bonus:
 filtrare i dati sulla base di parametri in query string
  */
 /**
- * 
+ *
  */
 //server
 const express = require("express"); //associare a variabile l'oggetto express
@@ -19,24 +19,23 @@ const PORT = 3000;
 server.use(express.static("public"));
 //root
 const postRouter = require("./router/posts.js");
-server.use("/post",postRouter);
+server.use("/post", postRouter);
 
 //qua partendo dal port 3000 ho l'inizio del server
 server.get("/", (req, res) => {
-
   res.send("<h1>Server del mio blog</h1>");
 });
-
-//qua dall'inizio aggiungo un path diverso che mi porta da un altra parte
-
-
-//default catch for typo url
-server.get("*", (req,res)=>{
-
-  res.status(404).send("<h1>ERROR - 404 page not found</h1>");
+server.post("/",(req,res)=>{
+  
 });
 
+server.get("/post", (req, res) => {});
+//qua dall'inizio aggiungo un path diverso che mi porta da un altra parte
 
+//default catch for typo url
+server.get("*", (req, res) => {
+  res.status(404).send("<h1>ERROR - 404 page not found</h1>");
+});
 
 //qua sto in ascolto per la porta 3000
 server.listen(PORT, () => {
