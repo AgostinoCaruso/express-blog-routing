@@ -25,12 +25,9 @@ server.use("/post", postRouter);
 server.get("/", (req, res) => {
   res.send("<h1>Server del mio blog</h1>");
 });
-server.post("/",(req,res)=>{
-  
-});
 
-server.get("/post", (req, res) => {});
-//qua dall'inizio aggiungo un path diverso che mi porta da un altra parte
+
+
 
 //default catch for typo url
 server.get("*", (req, res) => {
